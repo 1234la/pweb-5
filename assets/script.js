@@ -60,17 +60,24 @@ function validate() {
         return false;
     }
 
-    if(trimfield(document.getElementById('formFile1').value) == '') {
+    if((document.form.status_vaksin.value == "2" || document.form.status_vaksin.value == "3") && trimfield(document.getElementById('formFile1').value) == '') {
         alert( "Upload file sertifikat vaksin anda yang pertama!" );
         document.form.status_vaksin.focus() ;
         return false;
     }
     
-    if( document.form.status_vaksin.value == "3" && document.getElementById('formFile2').value == "") {
+    if( document.form.status_vaksin.value == "3" && trimfield(document.getElementById('formFile2').value) == '') {
         alert( "Upload file sertifikat vaksin anda yang kedua!" );
         document.form.status_vaksin.focus() ;
         return false;
     }
+
+    // belum berhasil
+    if((document.form.status_vaksin.value == "2" || document.form.status_vaksin.value == "3") && (document.getElementById('status_ttm1').value != "ya" && document.getElementById('status_ttm2').value != "tidak")) {
+        alert( "Silahkan pilih kebersediaan kuliah tatap muka !" );
+        return false;
+    }
+    //
 
     Swal.fire({
         title: 'Apakah anda yakin?',

@@ -114,13 +114,16 @@
                     <label for="formFile" name="sertifikat2" class="form-label">Sertfikat vaksin 2</label>
                     <input class="form-control" type="file" id="formFile2">
                 </div>
-                <div id="isVaksin" class="form-group" style="display: none;" onchange="validateTtm()">
-                    <fieldset>
-                        <label>Kebersediaan Tatap Muka :</label><br>
-                        <input  type="radio" name="status_ttm" value="1" style="margin-top: 10px;" required> Bersedia<br>
-                        <input type="radio" name="status_ttm" value="0" style="margin-top: 10px;"> Tidak<br>
-                        <br>
-                    </fieldset>
+                <div id="isVaksin" class="form-group" style="display: none;">
+                    <label for="">Kebersediaan kuliah tatap muka :</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="status_ttm1" value="ya" name="radio-stacked">
+                        <label class="form-check-label" for="status_ttm1">Bersedia</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="status_ttm2" name="radio-stacked" value="tidak">
+                        <label class="form-check-label" for="status_ttm1">Tidak bersedia</label>
+                      </div>
                 </div>
                 <div id="!isPenyintas" class="form-group" style="display: none;">
                     <label class="font-weight-bold">Alasan belum vaksin</label>
